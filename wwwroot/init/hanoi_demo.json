@@ -1,0 +1,33 @@
+{
+  "homeCamera": {
+    // Địa chỉ Ba Đình, Hà Nội
+    // "west": 105.83,
+    // "south": 21.02,
+    // "east": 105.85,
+    // "north": 21.04
+    // Khu vực Câu Giấy, Hà Nội
+    "west": 105.77794,
+    "south": 21.02517,
+    "east": 105.78794,
+    "north": 21.03517
+  },
+  "catalog": [
+    {
+      "id": "hanoi-3d-buildings",
+      "name": "Hà Nội 3D Buildings (OSM)",
+      "type": "3d-tiles",
+      "url": "https://assets.cesium.com/96188/tileset.json",
+      "ionAssetId": 96188, 
+      "ionAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlMTZiZDQyNi1iNDg0LTQyZjAtYWMwOS1iYmYzYTU0Nzc5NjUiLCJpZCI6Mzg4MDM1LCJpYXQiOjE3NzA0MzY2MTV9.8cCxmkQ8BicR_JyeWukK4DxQPX7xsdb0-3a6Ms_OvFQ",
+      "show": true
+    }
+  ],
+  "workbench": [
+    "hanoi-3d-buildings"
+  ],
+  "viewerMode": "3dSmooth",
+  "baseMaps": {
+    "defaultBaseMapId": "basemap-openstreetmap",
+    "previewBaseMapId": "basemap-natural-earth-II"
+  }
+}
