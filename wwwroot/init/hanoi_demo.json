@@ -13,17 +13,107 @@
   },
   "catalog": [
     {
-      "id": "hanoi-3d-buildings",
-      "name": "Hà Nội 3D Buildings (OSM)",
-      "type": "3d-tiles",
-      "url": "https://assets.cesium.com/96188/tileset.json",
-      "ionAssetId": 96188, 
-      "ionAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlMTZiZDQyNi1iNDg0LTQyZjAtYWMwOS1iYmYzYTU0Nzc5NjUiLCJpZCI6Mzg4MDM1LCJpYXQiOjE3NzA0MzY2MTV9.8cCxmkQ8BicR_JyeWukK4DxQPX7xsdb0-3a6Ms_OvFQ",
-      "show": true
+      "name": "Hà Nội - Đô thị thông minh",
+      "type": "group",
+      "members": [
+        {
+          "id": "hanoi-3d-buildings",
+          "name": "Hà Nội 3D Buildings (OSM)",
+          "type": "3d-tiles",
+          "url": "https://assets.cesium.com/96188/tileset.json",
+          "ionAssetId": 96188, 
+          "ionAccessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJlMTZiZDQyNi1iNDg0LTQyZjAtYWMwOS1iYmYzYTU0Nzc5NjUiLCJpZCI6Mzg4MDM1LCJpYXQiOjE3NzA0MzY2MTV9.8cCxmkQ8BicR_JyeWukK4DxQPX7xsdb0-3a6Ms_OvFQ",
+          "show": true
+        },
+        {
+          "id": "hanoi-sensor-aqi",
+          "name": "Chỉ số AQI Hà Nội (Chuẩn V8)",
+          "type": "csv",
+          "csvString": "Station,Lat,Lon,AQI\nHồ Gươm,21.0285,105.8521,150\nMỹ Đình,21.0283,105.7785,120",
+          "defaultStyle": {
+            "color": {
+              // "colorColumn": "AQI",
+              // "colorBinMethod": "quantiles",
+              // "numberOfBins": 3,
+              // "binColors": ["#00ff00", "#ffff00", "#ff0000"]
+            }
+          },
+          "show": true
+        },
+        {
+          "id": "hanoi-park-v8",
+          "name": "Vùng quy hoạch xanh (V8)",
+          "type": "geojson",
+          "geoJsonData": {
+            "type": "FeatureCollection",
+            "features": [
+              {
+                "type": "Feature",
+                "properties": {
+                  "fill": "#2ecc71",
+                  "stroke": "#27ae60",
+                  "title": "Khu vực xanh Cầu Giấy"
+                },
+                "geometry": {
+                  "type": "Polygon",
+                  "coordinates": [[
+                    [105.780, 21.028],
+                    [105.785, 21.028],
+                    [105.785, 21.032],
+                    [105.780, 21.032],
+                    [105.780, 21.028]
+                  ]]
+                }
+              }
+            ]
+          },
+          "show": true
+        },
+        {
+          "id": "hanoi-metro-line",
+          "name": "Tuyến Metro Nhổn - Ga Hà Nội",
+          "type": "geojson",
+          "geoJsonData": {
+            "type": "FeatureCollection",
+            "features": [
+              {
+                "type": "Feature",
+                "properties": {
+                  "stroke": "#ff0000",
+                  "stroke-width": 5,
+                  "title": "Tuyến Metro số 3"
+                },
+                "geometry": {
+                  "type": "LineString",
+                  "coordinates": [
+                    [105.73528159401599, 21.052642312946446],
+                    [105.74456878849657, 21.048092238248103],
+                    [105.7550654658919, 21.043991739157036],
+                    [105.7623951093147, 21.04136351472441],
+                    [105.7727878618324, 21.038084134393372],
+                    [105.78236559034218, 21.036662182601034],
+                    [105.79445240370484, 21.034948612360665],
+                    [105.80311068889506, 21.029356196222963],
+                    [105.81345454275197, 21.030289906315474],
+                    [105.82168368461873, 21.03117478452495],
+                    [105.8274085045515, 21.029352162820075],
+                    [105.83578481806609, 21.027213468221234],
+                    [105.84111700771899, 21.024240921882324]
+                  ]
+                }
+              }
+            ]
+          },
+          "show": true
+        }
+      ]
     }
   ],
   "workbench": [
-    "hanoi-3d-buildings"
+    "hanoi-3d-buildings",
+    "hanoi-sensor-aqi",
+    "hanoi-metro-line",
+    "hanoi-park-v8"
   ],
   "viewerMode": "3dSmooth",
   "baseMaps": {
