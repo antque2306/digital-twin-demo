@@ -79,7 +79,7 @@
               {
                 "type": "Feature",
                 "properties": {
-                  "stroke": "#ff0000",
+                  "stroke": "#F527EB",
                   "stroke-width": 5,
                   "title": "Tuyến Metro số 3"
                 },
@@ -105,13 +105,83 @@
             ]
           },
           "show": true
+        },
+        {
+          "id": "hanoi-traffic-static",
+          "name": "Hiện trạng giao thông (Demo)",
+          "type": "geojson",
+          "geoJsonData": {
+            "type": "FeatureCollection",
+            "features": [
+              {
+                "type": "Feature",
+                "properties": { "stroke": "#ff0000", "stroke-width": 5, "title": "Ngã tư Nguyễn Hoàng, Tôn Thất Thuyết - Đang tắc" },
+                "geometry": { "type": "LineString", "coordinates": [
+                  [105.77760904438918, 21.029115560754306],
+                  [105.77947995434943, 21.02882215311587],
+                  [105.78105897306659, 21.028601339812866],
+                  [105.78444639979443, 21.02813818520022]
+                ] }
+              },
+              {
+                "type": "Feature",
+                "properties": { "stroke": "#00ff00", "stroke-width": 5, "title": "Đường Trần Thái Tông - Thông thoáng" },
+                "geometry": { "type": "LineString", "coordinates": [
+                  [105.78444639979443, 21.02813818520022],
+                  [105.78737422243944, 21.027732068308566],
+                  [105.78774678665923, 21.029176287363143],
+                  [105.78837213985639, 21.031697142014167]
+                ] }
+              },
+              {
+                "type": "Feature",
+                "properties": { "stroke": "#00ff00", "stroke-width": 5, "title": "Đường Phạm Văn Bạch - Thông thoáng" },
+                "geometry": { "type": "LineString", "coordinates": [
+                  [105.78737422243944, 21.027732068308566],
+                  [105.7882252531939, 21.02624882023565],
+                  [105.78909118100518, 21.024842477461775]
+                ] }
+              },
+              {
+                "type": "Feature",
+                "properties": { "stroke": "#ff0000", "stroke-width": 5, "title": "Ngã tư Phạm Văn Bạch, Trung Kính - Đang tắc" },
+                "geometry": { "type": "LineString", "coordinates": [
+                  [105.78909118100518, 21.024842477461775],
+                  [105.78999373433248, 21.02337137674506],
+                  [105.79095110045535, 21.02176433848348]
+                ] }
+              }
+            ]
+          }
+        },
+        {
+          "id": "hanoi-traffic-simulation",
+          "name": "Mô phỏng dòng xe Real-time",
+          "type": "csv",
+          "csvString": "Latitude,Longitude,Time,Vehicle_ID,Status\n21.03682,105.78100,2026-02-09T08:00:00Z,Xe_Bus_01,Normal\n21.03678,105.78300,2026-02-09T08:01:00Z,Xe_Bus_01,Slow\n21.03675,105.78550,2026-02-09T08:02:00Z,Xe_Bus_01,Congested\n21.03670,105.78105,2026-02-09T08:00:00Z,Xe_Taxi_02,Normal\n21.03668,105.78305,2026-02-09T08:01:00Z,Xe_Taxi_02,Normal\n21.03665,105.78555,2026-02-09T08:02:00Z,Xe_Taxi_02,Normal",
+          "defaultStyle": {
+            "time": {
+              "timeColumn": "Time",
+              "idColumns": ["Vehicle_ID"]
+            },
+            "color": {
+              "colorColumn": "Status",
+              "enumColors": [
+                { "value": "Normal", "color": "#00ff00" },
+                { "value": "Slow", "color": "#ffff00" },
+                { "value": "Congested", "color": "#ff0000" }
+              ]
+            },
+            "pointSize": 12
+          },
+          "show": true
         }
       ]
     }
   ],
   "workbench": [
     "hanoi-3d-buildings",
-    "hanoi-sensor-aqi",
+    "hanoi-traffic-static",
     "hanoi-metro-line",
     "hanoi-park-v8"
   ],
